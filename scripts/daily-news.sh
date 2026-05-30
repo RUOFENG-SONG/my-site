@@ -32,4 +32,4 @@ git diff --quiet && git diff --staged --quiet && echo "没有新内容" && exit 
 git commit -m "📰 AI 新闻日报 $DATE"
 git push https://RUOFENG-SONG:${TOKEN}@github.com/RUOFENG-SONG/my-site.git main
 
-echo "✅ 新闻已发布到 https://ruofeng-song.github.io/my-site/news/"
+echo "✅ 新闻已发布到 https://my-site-murex-one.vercel.app/news/"
