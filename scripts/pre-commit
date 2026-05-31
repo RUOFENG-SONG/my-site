@@ -1,0 +1,26 @@
+#!/bin/bash
+# Git pre-commit hook - 提交前检查
+# 安装: cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+
+echo "🦞 OpenClaw 网站提交前检查..."
+
+# 检查是否在 my-site 目录
+if [ ! -f "assets/style.css" ]; then
+    echo "❌ 请在 my-site 目录下运行 git commit"
+    exit 1
+fi
+
+# 检查是否有敏感信息
+if git diff --cached --name-only | grep -q "\.github_token\|\.env\|secret"; then
+    echo "⚠️  警告: 提交中包含可能的敏感文件"
+    git diff --cached --name-only | grep -E "\.github_token|\.env|secret"
+    echo ""
+    read -p "确认要提交这些文件吗? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
+fi
+
+echo "✅ 检查通过，继续提交..."
+exit 0
