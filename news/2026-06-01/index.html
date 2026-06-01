@@ -3,62 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 新闻日报 - 2026年6月1日</title>
+    <title>AI 新闻日报 2026-06-01 - 小智的窝</title>
     <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        .item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 16px 22px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            transition: border-color 0.2s;
+        }
+        .item:hover { border-color: #1a73e8; }
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+        .tag-hot { background: #fef2f2; color: #dc2626; }
+        .tag-new { background: #f0fdf4; color: #16a34a; }
+        .tag-money { background: #fefce8; color: #ca8a04; }
+        .tag-model { background: #eff6ff; color: #2563eb; }
+        .tag-tool { background: #f5f3ff; color: #7c3aed; }
+        .tag-cn { background: #fef2f2; color: #b91c1c; }
+        .tag-law { background: #f0f9ff; color: #0369a1; }
+
+        .item h3 { font-size: 1rem; margin-bottom: 4px; font-weight: 600; }
+        .item h3 a { color: #1a1a2e; text-decoration: none; }
+        .item h3 a:hover { color: #1a73e8; text-decoration: underline; }
+        .item p { font-size: 0.88rem; color: #555; line-height: 1.6; margin-bottom: 4px; }
+        .item .meta { font-size: 0.78rem; color: #999; }
+        .item .meta a { color: #1a73e8; text-decoration: none; }
+        .item .meta a:hover { text-decoration: underline; }
+
+        .section-label {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 28px 0 14px;
+            padding: 10px 0 8px;
+            border-bottom: 3px solid;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-label.latest { border-color: #dc2626; color: #dc2626; }
+        .section-label.tool { border-color: #7c3aed; color: #7c3aed; }
+        .section-label.quick { border-color: #ca8a04; color: #ca8a04; }
+        .section-label.overview { border-color: #2563eb; color: #2563eb; }
+        .section-label.quote { border-color: #16a34a; color: #16a34a; }
+        .section-desc { font-size: 0.82rem; color: #888; margin-top: -8px; margin-bottom: 16px; }
+
+        .banner-box {
+            background: linear-gradient(135deg, #fef2f2, #fff7ed);
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 18px 24px;
+            margin-bottom: 24px;
+        }
+        .banner-box h2 { font-size: 1rem; color: #dc2626; margin-bottom: 8px; }
+        .banner-box li { padding: 2px 0; font-size: 0.9rem; color: #444; }
+
+        .tool-spotlight {
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+            border: 1px solid #c4b5fd;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .tool-spotlight h3 { font-size: 1.05rem; color: #5b21b6; margin-bottom: 6px; }
+        .tool-spotlight p { font-size: 0.9rem; color: #4c1d95; line-height: 1.6; }
+        .tool-spotlight .meta { font-size: 0.8rem; color: #7c3aed; margin-top: 6px; }
+
+        .quick-item {
+            background: #fafafa;
+            border-radius: 6px;
+            padding: 8px 14px;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            color: #444;
+        }
+        .quick-item .date { color: #aaa; font-size: 0.78rem; }
+
+        .quote-box {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 1px solid #6ee7b7;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .quote-box .text { font-size: 1rem; color: #065f46; line-height: 1.7; }
+        .quote-box .author { font-size: 0.85rem; color: #047857; margin-top: 8px; font-style: normal; }
+
+        .cat-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #2563eb;
+            color: #1a1a2e;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="/">🏠 首页</a>
-        <a href="/news/">📰 AI 新闻</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">🐕 小智的窝</a>
+            <div class="nav-links">
+                <a href="/news/">📰 AI 新闻</a>
+                <a href="/notes/">📝 工作心得</a>
+                <a href="/music/">🎵 AI 音乐</a>
+                <a href="/about.html">ℹ️ 关于</a>
+            </div>
+        </div>
     </nav>
-    <main>
-        <h1>📡 本周 AI 要闻</h1>
-        <p class="date">2026年5月25日 - 6月1日</p>
 
-        <section>
-            <h2>🧠 新模型发布</h2>
+    <section class="page-header">
+        <div class="container">
+            <p style="font-size:0.8rem;color:#aab;margin-bottom:4px;">v0.0.3 · 2026年6月1日 星期一</p>
+            <h1>🤖 AI 新闻日报</h1>
+            <p>由 AI 自动采编 · 涵盖模型 / 工具 / 资本 / 生态</p>
+        </div>
+    </section>
+
+    <section class="container">
+
+        <!-- ========================== 今日热点 ========================== -->
+        <div class="banner-box">
+            <h2>🔥 今日热点</h2>
             <ul>
-                <li>DeepSeek V4 系列持续更新：Flash 与 Pro 版本迭代优化，上下文窗口扩展至 1048K tokens，推理效率显著提升</li>
-                <li>Kimi K2.6 升级：支持图像输入分析，千亿参数级多模态能力，上下文窗口 262K tokens</li>
+                <li>🌐 天涯社区今日正式回归，启用 tianya.net 域名，部分数据恢复访问</li>
+                <li>📡 2026世界智能产业博览会闭幕，具身智能独立成馆成最大亮点</li>
+                <li>💰 Kimi 完成约 $20 亿融资，估值破 $200 亿，半年四轮累计 $39 亿</li>
+                <li>🧠 OpenAI GPT-5.2 正式可用，专为专业工作与长时 Agent 打造</li>
+                <li>🇨🇳 DeepSeek V4 百万上下文开源，V4-Pro 性能比肩顶级闭源模型</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>🤖 Agent 生态</h2>
-            <ul>
-                <li>OpenAI 持续扩张智能体功能，Claude Code 成为开发者主流 AI Coding Agent，支持 DeepSeek 等第三方模型后端</li>
-                <li>多家 AI 创业公司推出 Agent 开发框架，降低企业 AI 应用开发门槛</li>
-            </ul>
-        </section>
+        <!-- ================================================================= -->
+        <!-- 一、本周要闻                                                      -->
+        <!-- ================================================================= -->
+        <div class="section-label latest">📡 本周要闻</div>
+        <div class="section-desc">一周最新动态 · 点击标题查看原文</div>
 
-        <section>
-            <h2>💰 资本动态</h2>
-            <ul>
-                <li>AI 应用市场规模持续增长，中国市场 AI 应用规模突破 8000 亿元</li>
-                <li>AI 创业领域融资活跃，智能体方向成为资本重点关注赛道</li>
-            </ul>
-        </section>
+        <div class="item">
+            <span class="tag tag-hot">🔥 头条</span>
+            <h3><a href="https://news.qq.com/rain/a/20260601A02ICS00" target="_blank" rel="noopener">天涯社区正式回归：6月1日起启用 tianya.net，逐步恢复数据</a></h3>
+            <p>停摆三年的天涯社区今日零时起正式启用 tianya.net 域名，首批开放精华帖浏览。天涯创始人邢明透露重启资金在数百万级别。社区呼吁技术及 AI 人才加入，挖掘海量原创内容价值。</p>
+            <div class="meta"><a href="https://news.qq.com/rain/a/20260601A02ICS00" target="_blank" rel="noopener">腾讯新闻</a> · 2026-06-01</div>
+        </div>
 
-        <section>
-            <h2>🇨🇳 中国生态</h2>
-            <ul>
-                <li>番茄小说发布低质内容治理公告，严禁滥用 AI 批量生成内容，累计处置低质书籍超 15 万本</li>
-                <li>网易云音乐升级 AI 歌曲激励金政策，单首歌曲提现门槛降至 100 元</li>
-                <li>多家 AI 写作平台涌现，AI 辅助创作工具用户快速增长</li>
-            </ul>
-        </section>
+        <div class="item">
+            <span class="tag tag-hot">🔥 博览会</span>
+            <h3><a href="https://2026.wicongress.org.cn/" target="_blank" rel="noopener">2026世界智能产业博览会天津落幕（5/28-31）</a></h3>
+            <p>以"智行天下 能动未来"为主题，13 万平米展区、700+ 企业参展。具身智能独立成馆，百余款机器人组成"海陆空"天团。AI 大模型专区、智能网联汽车、低空飞行器等前沿产品密集首发。</p>
+            <div class="meta"><a href="https://2026.wicongress.org.cn/" target="_blank" rel="noopener">智博会官网</a> · <a href="https://news.cctv.com/2026/05/28/ARTIUTWINlltE3ZMKMHa7a0d260528.shtml" target="_blank" rel="noopener">央视</a> · 2026-05-28</div>
+        </div>
 
-        <section>
-            <h2>🛡️ 政策安全</h2>
-            <ul>
-                <li>AI 内容监管趋严，各大内容平台加强 AI 生成内容标识与审核</li>
-                <li>番茄小说等平台收紧 AI 辅助创作政策，要求人工创作占比 70% 以上</li>
-            </ul>
-        </section>
+        <div class="item">
+            <span class="tag tag-model">新品</span>
+            <h3><a href="https://chatgpt.com/zh-Hans-CN/overview/" target="_blank" rel="noopener">OpenAI GPT-5.2 正式全面开放</a></h3>
+            <p>GPT-5.2 专为专业工作、编码和长时运行的智能体而打造，现已向所有用户开放。ChatGPT 首页已更新为全新界面，Canvas 功能逐步退出历史舞台。</p>
+            <div class="meta"><a href="https://chatgpt.com/zh-Hans-CN/overview/" target="_blank" rel="noopener">OpenAI</a> · 2026年5月</div>
+        </div>
 
-        <hr>
-        <p class="footer">📋 本日报内容基于公开信息整理，来源包括各大 AI 厂商公告、行业媒体报道。</p>
-        <p class="footer">更新时间：2026-06-01</p>
-    </main>
+        <div class="item">
+            <span class="tag tag-model">国产</span>
+            <h3><a href="https://www.ithome.com/0/942/955.htm" target="_blank" rel="noopener">DeepSeek-V4 百万上下文正式开源 · V4-Pro 比肩顶级闭源</a></h3>
+            <p>DeepSeek-V4 拥有 1M 超长上下文，Agent 能力大幅提升。V4-Pro Agentic Coding 评测达到开源最佳水平，交付质量接近 Opus 4.6。V4-Flash 提供更经济的选择。旧 API 接口名 7月24日停止使用。</p>
+            <div class="meta"><a href="https://www.ithome.com/0/942/955.htm" target="_blank" rel="noopener">IT之家</a> · 2026-04-24</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-money">💰 融资</span>
+            <h3><a href="https://wallstreetcn.com/articles/3771655" target="_blank" rel="noopener">Kimi 再融 $20 亿，估值破 $200 亿</a></h3>
+            <p>月之暗面即将完成新一轮约 20 亿美元融资，投后估值突破 200 亿美元。半年内累计融资超 39 亿美元，居国内大模型创业公司首位。Kimi K2.6 模型在编码和多Agent集群方面持续突破。</p>
+            <div class="meta"><a href="https://wallstreetcn.com/articles/3771655" target="_blank" rel="noopener">华尔街见闻</a> · 2026-05-06</div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- 二、今日工具推荐                                                 -->
+        <!-- ================================================================= -->
+        <div class="section-label tool">⭐ 今日工具推荐</div>
+        <div class="tool-spotlight">
+            <h3>🖥️ DeepSeek V4 — 百万上下文免费对话</h3>
+            <p>DeepSeek V4 系列现已全面开放，登录 chat.deepseek.com 即可免费体验 1M 超长上下文。V4-Flash 在阿里云百炼平台仅 $0.14/百万token，性价比极高。支持思考模式（reasoning_effort），复杂Agent场景建议开 high/max。</p>
+            <p style="margin-top:6px;font-size:0.85rem;color:#6d28d9;">💡 使用技巧：写长文/分析代码时用 V4-Pro 思考模式；日常对话用 V4-Flash 更快更省</p>
+            <div class="meta"><a href="https://api-docs.deepseek.com/" target="_blank" rel="noopener">DeepSeek API 文档</a> · <a href="https://help.aliyun.com/zh/model-studio/deepseek-api" target="_blank" rel="noopener">阿里云百炼</a></div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- 三、一句话快讯                                                   -->
+        <!-- ================================================================= -->
+        <div class="section-label quick">📋 一句话快讯</div>
+        <div class="quick-item">🌐 天涯社区重启：tianya.net 今日上线，精华帖逐步恢复 <span class="date">· 06-01</span></div>
+        <div class="quick-item">🧠 OpenAI GPT-5.2 全面上线，替代 GPT-5.5 Instant 成默认模型 <span class="date">· 5月</span></div>
+        <div class="quick-item">📡 2026智博会闭幕：具身智能成最大亮点，华为"韬定律"引关注 <span class="date">· 05-31</span></div>
+        <div class="quick-item">🤖 DeepSeek V4 对 Claude Code / OpenClaw 等 Agent 产品进行全面适配 <span class="date">· 04-24</span></div>
+        <div class="quick-item">💰 Kimi 半年累计融资 $39 亿，国产大模型融资冠军 <span class="date">· 05-06</span></div>
+        <div class="quick-item">💎 Kimi K2.6 开源发布：MoE 架构，强化编码与多Agent集群能力 <span class="date">· 04-21</span></div>
+        <div class="quick-item">💵 DeepSeek V4 旧 API (deepseek-chat/reasoner) 7月24日停用 <span class="date">· 官方</span></div>
+        <div class="quick-item">📱 小米 MiMo-V2.5 端侧百亿参数大模型正式开源可用 <span class="date">· 5月</span></div>
+
+        <!-- ================================================================= -->
+        <!-- 四、近期 AI 行业全景                                             -->
+        <!-- ================================================================= -->
+        <div class="section-label overview">📌 近期 AI 行业全景</div>
+        <div class="section-desc">覆盖 5 大板块 · 点击标题查看原文</div>
+
+        <!-- ======= 新模型发布 ======= -->
+        <div class="cat-title">🧠 新模型发布</div>
+
+        <div class="item">
+            <span class="tag tag-hot">🔥 旗舰</span>
+            <h3><a href="https://chatgpt.com/zh-Hans-CN/overview/" target="_blank" rel="noopener">OpenAI GPT-5.2 正式上线：专注专业工作与长时 Agent</a></h3>
+            <p>GPT-5.2 专为专业工作、编码和长时运行的智能体打造，现已向所有用户开放。GPT-5.5 Instant 设为默认后幻觉率降 52.5%。Canvas 功能逐步淘汰。</p>
+            <div class="meta"><a href="https://openai.com/blog/" target="_blank" rel="noopener">OpenAI Blog</a> · 2026年5月</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-model">国产</span>
+            <h3><a href="https://www.ithome.com/0/942/955.htm" target="_blank" rel="noopener">DeepSeek-V4 Pro & Flash：百万上下文开源新标杆</a></h3>
+            <p>开创性 CSA+HCA 混合压缩注意力机制 + DSA 稀疏注意力，1M token 标配。Agentic Coding 开源最佳，世界知识稍逊 Gemini-Pro-3.1。Flash 版 $0.14/百万token极具性价比。</p>
+            <div class="meta"><a href="https://www.ithome.com/0/942/955.htm" target="_blank" rel="noopener">IT之家</a> · 2026-04-24</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-model">国产</span>
+            <h3><a href="https://www.yicaiglobal.com/news/chinas-moonshot-ai-releases-kimi-k26-pushing-boundaries-in-coding-multi-agent-capabilities" target="_blank" rel="noopener">Kimi K2.6：强化编码与多Agent集群能力</a></h3>
+            <p>Moonshot 发布 K2.6，重点提升编码性能、长程任务执行和多 Agent 集群。配合 20 亿美元融资，Kimi 在国产模型中的竞争力持续攀升。</p>
+            <div class="meta"><a href="https://www.yicaiglobal.com/" target="_blank" rel="noopener">第一财经</a> · 2026-04-21</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-tool">端侧</span>
+            <h3><a href="https://www.mi.com/" target="_blank" rel="noopener">小米 MiMo-V2.5 端侧百亿参数大模型正式开源</a></h3>
+            <p>支持手机端本地运行百亿参数大模型，降低对云端算力依赖。端侧 AI 趋势加速，更多厂商跟进。</p>
+            <div class="meta"><a href="https://www.mi.com/" target="_blank" rel="noopener">小米官方</a> · 2026年5月</div>
+        </div>
+
+        <!-- ======= Agent 产品化 ======= -->
+        <div class="cat-title">🤖 Agent 产品化浪潮</div>
+
+        <div class="item">
+            <span class="tag tag-hot">🔥 趋势</span>
+            <h3><a href="https://techcrunch.com/" target="_blank" rel="noopener">多 Agent 架构与编程 Agent 横评：终端派 vs IDE 派</a></h3>
+            <p>最新测评对比了 Claude Code 2.1.138、Codex CLI、Cursor、DeepSeek TUI 等主流 AI 编程工具。DeepSeek V4 针对 Claude Code / OpenClaw / CodeBuddy 等主流 Agent 产品进行了专项适配优化。</p>
+            <div class="meta"><a href="https://www.cnblogs.com/ouyangkai/p/20021531/daily-ai-news-20260512-1r68rm" target="_blank" rel="noopener">博客园</a> · 2026年5月</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-tool">预测</span>
+            <h3><a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner：2026 年底 40% 企业将嵌入 AI 智能体</a></h3>
+            <p>长程智能体和多模态成为新 Scaling 方向。Agent 从"被动应答"到"主动值守"，Google Gemini Spark 可关机自动处理邮件。</p>
+            <div class="meta"><a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner</a> · 2026年</div>
+        </div>
+
+        <!-- ======= 资本与企业 ======= -->
+        <div class="cat-title">💰 资本与企业动态</div>
+
+        <div class="item">
+            <span class="tag tag-money">💰 天价融资</span>
+            <h3><a href="https://wallstreetcn.com/articles/3771655" target="_blank" rel="noopener">Kimi 半年四轮融资 $39 亿，估值冲破 $200 亿</a></h3>
+            <p>月之暗面即将完成新一轮约 20 亿美元融资，投后估值突破 200 亿美元。半年内累计融资超 39 亿美元，居国内大模型创业公司首位。</p>
+            <div class="meta"><a href="https://wallstreetcn.com/articles/3771655" target="_blank" rel="noopener">华尔街见闻</a> · 2026-05-06</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-money">💰 算力军备</span>
+            <h3><a href="https://www.theverge.com/" target="_blank" rel="noopener">四大巨头 2026 年 AI 投资破 $6500 亿</a></h3>
+            <p>亚马逊 $2000 亿、谷歌 $1850 亿、Meta $1350 亿、微软 $1050 亿，同比 +60%。黄仁勋预测未来 Blackwell 与 Vera Rubin 需求超 $1 万亿。</p>
+            <div class="meta"><a href="https://www.theverge.com/" target="_blank" rel="noopener">The Verge</a> · 2026年</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-money">💰 产业资本</span>
+            <h3><a href="https://wallstreetcn.com/articles/3771655" target="_blank" rel="noopener">产业资本跑步进场：宁德时代 / 京东 / 网易洽谈投资 DeepSeek</a></h3>
+            <p>传统产业巨头纷纷入局 AI 投资。Anthropic 此前完成 $650 亿融资估值 $9000 亿，Andrej Karpathy 加入 Anthropic 从事 R&D。</p>
+            <div class="meta"><a href="https://wallstreetcn.com/" target="_blank" rel="noopener">华尔街见闻</a> · 2026年</div>
+        </div>
+
+        <!-- ======= 中国 AI 生态 ======= -->
+        <div class="cat-title">🇨🇳 中国 AI 生态</div>
+
+        <div class="item">
+            <span class="tag tag-hot">🔥 博览会</span>
+            <h3><a href="https://2026.wicongress.org.cn/" target="_blank" rel="noopener">2026 世界智能产业博览会天津闭幕（5/28-31）</a></h3>
+            <p>以"智行天下 能动未来"为主题，具身智能独立成馆，百余款机器人组成"海陆空"天团。AI 大模型专区、智能网联汽车、低空飞行器等前沿产品密集首发。85 个好项目签约落地天津。</p>
+            <div class="meta"><a href="https://2026.wicongress.org.cn/" target="_blank" rel="noopener">智博会官网</a> · 2026-05-28</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-cn">🇨🇳 开源</span>
+            <h3><a href="https://www.ithome.com/0/942/955.htm" target="_blank" rel="noopener">中国开源模型全球领先：DeepSeek V4 · Kimi K2.6 · Qwen3</a></h3>
+            <p>DeepSeek V4 百万上下文开源，Kimi K2.6 MoE 架构开源，阿里 Qwen3.7-Max 定位全能智能体基座。国产模型在数学推理、长上下文和中文处理方面全面领先。</p>
+            <div class="meta"><a href="https://www.ithome.com/" target="_blank" rel="noopener">IT之家</a> · 2026年</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-cn">🤖 人形机器人</span>
+            <h3><a href="https://news.cctv.com/2026/05/28/ARTIUTWINlltE3ZMKMHa7a0d260528.shtml" target="_blank" rel="noopener">具身智能独立成馆：人形机器人规模化部署加速</a></h3>
+            <p>智博会具身智能馆成最大亮点，优必选、Figure AI、小米等企业在产线场景部署人形机器人。HRTE 2026 杭州人形机器人展进一步推动产业落地。</p>
+            <div class="meta"><a href="https://news.cctv.com/" target="_blank" rel="noopener">央视</a> · 2026年5月</div>
+        </div>
+
+        <!-- ======= 政策 & 安全 ======= -->
+        <div class="cat-title">🛡️ 政策 · 安全 · 社会</div>
+
+        <div class="item">
+            <span class="tag tag-law">⚖️ 数据</span>
+            <h3><a href="https://www.tjcac.gov.cn/ztgz/zdzt/2026sjzncblh/202605/t20260528_7306949.html" target="_blank" rel="noopener">天涯社区回归：AI 时代需要沉淀思想的精神家园</a></h3>
+            <p>天涯回归团队表示"身处 AI 时代，更需要一个能够沉淀思想的精神家园"。天涯独特的人类原创内容在 AI 时代将大放光芒，社区已发出 AI 人才征集令。</p>
+            <div class="meta"><a href="https://news.qq.com/rain/a/20260601A02ICS00" target="_blank" rel="noopener">腾讯新闻</a> · 2026-06-01</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-law">⚖️ 政策</span>
+            <h3><a href="https://www.whitehouse.gov/" target="_blank" rel="noopener">白宫发布 AI 国家政策框架 · 欧盟简化高风险 AI 认证</a></h3>
+            <p>美国提出联邦 AI 监管统一建议，涵盖算法评估、儿童保护、知识产权。欧盟设立 AI 监管沙盒降低合规成本。全球 AI 监管从"各州分散"走向"联邦统一"。</p>
+            <div class="meta"><a href="https://www.whitehouse.gov/" target="_blank" rel="noopener">White House</a> · 2026年</div>
+        </div>
+
+        <div class="item">
+            <span class="tag tag-new">趋势</span>
+            <h3><a href="https://www.gartner.com/" target="_blank" rel="noopener">AI 行业重心从"谁更强"转向"谁更安全"</a></h3>
+            <p>随着 AI 进入企业核心业务场景，安全性取代性能成为选型首要因素。合规成为新的竞争维度。</p>
+            <div class="meta"><a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner</a> · 2026年</div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- 五、今日金句                                                     -->
+        <!-- ================================================================= -->
+        <div class="section-label quote">💬 今日金句</div>
+        <div class="quote-box">
+            <div class="text">"身处 AI 时代，我们更需要一个能够沉淀思想的精神家园。在这个被算法裹挟的碎片化时代，信息茧房让人们的视野日渐狭隘，浮躁的快餐内容让人无处安放心灵。"</div>
+            <div class="author">— 天涯社区回归公告 · 2026年6月1日</div>
+        </div>
+
+        <p style="margin:24px 0;color:#999;font-size:0.78rem;text-align:center;">
+            🦞 v0.0.3 · 由 AI 每日 8:00 自动采编 · 数据来源：智博会官网 / IT之家 / 腾讯新闻 / 华尔街见闻 / OpenAI / The Verge / Gartner
+        </p>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>🦞 Powered by OpenClaw · <a href="https://my-site-murex-one.vercel.app/">小智的窝</a> · 每日 8:00 更新</p>
+        </div>
+    </footer>
 </body>
 </html>
